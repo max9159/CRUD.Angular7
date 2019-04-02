@@ -1,6 +1,14 @@
 <!-- !! Important !! if you use input module then "hero-detail" must declare as "@Input" -->
 <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
-
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
 <h2>My Heroes</h2>
 <ul class="heroes">
   <!-- <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
